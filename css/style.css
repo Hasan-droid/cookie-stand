@@ -1,0 +1,60 @@
+body{
+    background-color: #eeebdd;
+ }
+ 
+ 
+  ul{
+    background-color:#1b1717;
+     border-radius: 25px;
+    border: 2px solid #73AD21;
+    text-align: center;
+  }
+  ul li{
+    
+    display: inline;
+    margin-right: 20px;
+    
+  }
+header a{
+    text-decoration:none;
+    color:#eeebdd;
+    top: 20px;
+    width: 100%;
+    padding: 20px;
+    
+  }
+h1{
+   color:#ce1212;
+  
+   text-align: center;
+   margin-top: 20px;
+}
+p
+{
+    margin: 20px;
+    font-size: 16;
+
+}
+
+#our-branches{
+background-color: aliceblue;
+}
+
+/* header nav {
+    float: right;
+     
+
+  } */
+/* header nav ul li {
+    display: inline-block;
+    padding: 0 30px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: #4B0082;
+} */
+footer h2{
+position: relative;
+top:0;
+left:0;
+}
