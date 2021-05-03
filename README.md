@@ -1,8 +1,7 @@
 # cookie-stand
 ##  **Synopsis**
 **Worked on by Maryam Al-Eisah & Hasan Baydoun**
-* Hasan Baydoun as a Navigator
-* Maryam Al-Eisah as a Driver
+
 
 the website calculate the number of cookies each location must make every day so that it can manage its supplies inventory and baking schedule. The number of cookies to make depends on the hours of operation 
 
