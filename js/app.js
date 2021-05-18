@@ -2,6 +2,7 @@
 let hours= ['6am', '7am', '8am', '9am', '10am' , '11am' , '12pm' , '1pm' , '2pm' , '3pm' , '4pm' , '5pm' , '6pm' , '7pm' , 'total'];
 let list=document.getElementById("lists");
 let tableE1=document.createElement('table');
+let SalesObjects=[];
 function Sales(location , min_max_hourlyCoustomers , Average_Cookies , total , sales , customerPerHour)
 {
     this.location=location;
@@ -10,6 +11,7 @@ function Sales(location , min_max_hourlyCoustomers , Average_Cookies , total , s
     this.total=total;
     this.sales=sales;
     this.customerPerHour=customerPerHour;
+    SalesObjects.push(this);
 }
  
 
@@ -90,26 +92,39 @@ let footertable=function()
     tableE1.appendChild(tr2E1);
     tr2E1.appendChild(th2E1);
     th2E1.textContent="total";
-
+    let totalCookies=0;
     for(let i=0 ; i<hours.length ; i++)
-    {
-        if((hours.length -1)===i)
-        break;
+    { let totalCookiesPerHour=0;
+       
+       
         th2E1=document.createElement('th');
-        th2E1.textContent=Seattle.sales[i]+
-        Tokyo.sales[i]+
-        Dubai.sales[i]+
-        Paris.sales[i]+
-        Lima.sales[i];
+        
+        for(let k=0 ; k<SalesObjects.length ; k++)
+        {  
+             
+             if((hours.length -1)===i){
+             
+             totalCookies+=SalesObjects[k].total;
+           
+            
+             
+             }
+
+             else{
+                totalCookiesPerHour+=SalesObjects[k].sales[i];
+                 
+             }
+             
+        }
+        if((hours.length -1 )=== i )
+        break;
+        th2E1.textContent=totalCookiesPerHour;
+        
         tr2E1.appendChild(th2E1);
     }
     let liRsults=document.createElement('th');
     tr2E1.appendChild(liRsults)
-    liRsults.textContent=`${Seattle.total+
-    Tokyo.total+
-Dubai.total+
-Paris.total +
-Lima.total} cookies `;
+    liRsults.textContent=`${totalCookies} cookies `;
 }
 
 let Seattle=new Sales('Seattle' , avgCust(23 , 65) , 6.3 , 0 , [] , [] );
@@ -143,7 +158,28 @@ Lima.render();
 
 footertable();
 
+let newStandForm=document.getElementById("newStandForm")
+newStandForm.addEventListener('submit',submitter);
 
+function submitter(event) {
+    event.preventDefault();
+     console.log('hello event is working', event);
+   let locationName=event.target.location.value;
+   let max=Number(event.target.max.value);
+   let min=Number(event.target.min.value);
+   let avg=Number(event.target.avg.value);
+
+   let newStand=new Sales(locationName , avgCust(min , max), avg , 0 , [] , []);
+
+   removeRow();
+
+   newStand.getCoustomerPerHour(min , max);
+   newStand.getCokiesAvg();
+   newStand.render();
+
+   footertable();
+   
+}
 
 
 
@@ -157,6 +193,10 @@ footertable();
  
 function avgCust(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+}
+function removeRow()
+{
+    tableE1.deleteRow(tableE1.rows.length-1);
 }
 
  

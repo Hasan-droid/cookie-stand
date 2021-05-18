@@ -1,6 +1,6 @@
 # cookie-stand
 ##  **Synopsis**
-**Worked on by Maryam Al-Eisah & Hasan Baydoun**
+**Worked on by Hasan Baydoun**
 
 
 the website calculate the number of cookies each location must make every day so that it can manage its supplies inventory and baking schedule. The number of cookies to make depends on the hours of operation 
