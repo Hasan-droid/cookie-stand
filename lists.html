@@ -39,6 +39,30 @@
   </header>
 <body>
     <div id="lists"></div>
-    <script src="js/app.js"></script>   
+     
+   
+    <section>
+        <h3 style="border: 2px solid green; width: 50%; background-color: grey;">add new Cookie Stand</h3>
+        <form id="newStandForm">
+            
+            <fieldset style="border: 0px;">
+               
+                <label for="location">Location </label>
+                <input type="text" name="location" id="location"placeholder="type name of the city"/>
+                <br>
+                <label for="mincust">Minimum number of Coustmers per hour </label>
+                <input type="number" name="min" placeholder="Numbers only"/>
+                <br>
+                <label for="maxcust">Maxmum number of Coustmers per hour </label>
+                <input type="number" name="max" placeholder="Numbers only"/>
+                <br>
+                <label for="avgcoke">Average sold cookies per hour </label>
+                <input type="number" name="avg" placeholder="Numbers only"/>
+                <br><br>
+                <input type="submit" value="add new location"/>
+            </fieldset>
+        </form> 
+    </section>
+    <script src="js/app.js"></script>
 </body>
 </html>
