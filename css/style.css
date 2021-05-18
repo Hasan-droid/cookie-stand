@@ -2,16 +2,39 @@ body{
     background-color: #eeebdd;
  }
 
- table td {
-  border: 1px solid black;
- }
  
  
-  ul{
+ 
+  .navBar{
     background-color:#1b1717;
      border-radius: 25px;
     border: 2px solid #73AD21;
     text-align: center;
+    
+    
+  }
+
+  .menuImages
+  {
+    width:300px;
+    height: 100px;
+   
+    margin-left: 50%;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+     
+    
+  }
+  .customerImage
+  {
+    width: 400px;
+    height: 200px;
+  }
+  h2{
+     
+    text-align: center;
+     
   }
   ul li{
     
